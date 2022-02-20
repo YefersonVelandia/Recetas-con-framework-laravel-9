@@ -25,8 +25,8 @@ return new class extends Migration
             $table->text('ingredientes'); 
             $table->text('preparacion'); 
             $table->string('imagen');
-            $table->unsignedBigInteger('user_id')->references('id')->on('users')->comment('El usuario que crea la receta'); 
-            $table->unsignedBigInteger('categoria_id')->index('categoria_id')->on('categoria_receta')->comment('categoria de la receta'); 
+            $table->foreignId('user_id')->references('id')->on('users')->comment('El usuario que crea la receta'); 
+            $table->foreignId('categoria_id')->references('id')->on('categoria_receta')->comment('categoria de la receta'); 
             $table->timestamps();
         });
     }

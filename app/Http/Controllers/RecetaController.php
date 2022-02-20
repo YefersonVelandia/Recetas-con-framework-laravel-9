@@ -45,11 +45,17 @@ class RecetaController extends Controller
             'titulo' => 'required|min:6',
             'categoria' =>'required',
             'preparacion' =>'required',
-            'ingredientes' =>'required'
+            'ingredientes' =>'required',
+            // 'imagen' =>'required|image|size:1000'
         ]);
 
         DB::table('recetas')->insert([
-            'titulo' => $data['titulo']
+            'titulo' => $data['titulo'],
+            'preparacion' => $data['preparacion'],
+            'ingredientes' => $data['ingredientes'],
+            'imagen' => 'imagen.jpg',
+            'user_id' =>1,
+            'categoria_id' => $data['categoria']
         ]);
 
         return redirect()->action('App\Http\Controllers\RecetaController@index');
