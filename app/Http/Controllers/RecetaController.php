@@ -29,7 +29,8 @@ class RecetaController extends Controller
      */
     public function create()
     {
-        return view('recetas.create');
+        $recetas = DB::table('categoria_receta')->get()->pluck('nombre','id' );
+        return view('recetas.create')->with('recetas', $recetas);
     }
 
     /**

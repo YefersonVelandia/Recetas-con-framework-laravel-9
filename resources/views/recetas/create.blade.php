@@ -22,6 +22,19 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select 
+                        name="categoria"
+                        class="form-control"
+                        id="categoria"
+                    >
+                    @foreach($recetas as $id => $nombre)
+                        <option value="{{ $id}}"> {{$nombre}}</option>
+                    @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <button class="btn btn-primary mt-2"> Agregar receta </button>
                 </div>
             </form>
