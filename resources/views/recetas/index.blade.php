@@ -19,10 +19,17 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>pia</td>
-                    <td>pepron</td>
-                </tr>
+                @foreach($recetas as $receta)                    
+                    <tr>
+                        <td>{{ $receta->titulo}}</td>
+                        <td>{{ $receta->categoria_id}}</td>     
+                        <td>
+                            <a href="" class="btn btn-success">Ver</a>
+                            <a href="" class="btn btn-dark">Editar</a>
+                            <a href="" class="btn btn-danger">Eliminar</a>
+                        </td>                   
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
