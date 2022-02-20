@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Receta extends Model
 {
-    use HasFactory;
+    //Obtiene el nombre de la categoria via fk
+    public function categoria()
+    {
+        return $this->belongsTo(CategoriaReceta::class);
+    }
+    // use HasFactory;
 }
