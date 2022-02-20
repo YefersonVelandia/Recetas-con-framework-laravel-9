@@ -25,13 +25,20 @@
                     <label for="categoria">Categoria</label>
                     <select 
                         name="categoria"
-                        class="form-control"
+                        class="form-control @error('categoria') is-invalid @enderror""
                         id="categoria"
                     >
-                    @foreach($recetas as $id => $nombre)
-                        <option value="{{ $id}}"> {{$nombre}}</option>
-                    @endforeach
+                        <option value=""> -- Seleccione -- </option>
+                        @foreach($recetas as $id => $nombre)
+                            <option value="{{ $id}}" {{ old('categoria') == $id ? 'selected' : ''}}> {{$nombre}}</option>
+                        @endforeach
                     </select>
+
+                    @error('categoria')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong> {{ $message }} </strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="form-group">
