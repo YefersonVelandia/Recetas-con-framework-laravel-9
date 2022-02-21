@@ -22,9 +22,11 @@
 
             <p>
                 <span class="font-weight-bold text-primary">Fecha de creación:</span>
-                {{ $receta->created_at}}
+                @php
+                    $fecha = $receta->created_at
+                @endphp
+                <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
             </p>
-            <fecha-receta></fecha-receta>
 
             <div class="ingredientes">
                 <h2 class="my-3 text-primary">Ingredientes</h2>
