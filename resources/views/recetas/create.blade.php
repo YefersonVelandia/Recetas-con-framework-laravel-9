@@ -18,7 +18,7 @@
             <form method="POST" action="{{ route('recetas.store') }}" enctype="multipart/form-data" novalidate>
                  @csrf {{-- Token necesario --}}
                 <div class="form-group">
-                  <label for="titulo">Titulo de la receta</label>
+                  <label for="titulo"><strong>Titulo de la receta</strong></label>
                   <input type="text" name="titulo" class="form-control @error('titulo') is-invalid @enderror" id="titulo" placeholder="Titulo Receta" value={{ old('titulo') }} >  
 
                   @error('titulo')
@@ -29,11 +29,11 @@
                       
                 </div>
 
-                <div class="form-group">
-                    <label for="categoria">Categoria</label>
+                <div class="form-group mt-3">
+                    <label for="categoria"><strong>Categoria</strong></label>
                     <select 
                         name="categoria"
-                        class="form-control mt-3 @error('categoria') is-invalid @enderror"
+                        class="form-control  @error('categoria') is-invalid @enderror"
                         id="categoria"
                     >
                         <option value=""> -- Seleccione -- </option>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="form-group mt-3">
-                    <label for="preparacion">Preparación</label>
+                    <label for="preparacion"><strong>Preparación</strong></label>
                     <input id="preparacion"type="hidden" name="preparacion" value="{{ old('preparacion') }}">
 
                     <trix-editor class=" form-control  @error('preparacion') is-invalid @enderror"  input="preparacion"></trix-editor>
@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="form-group mt-3">
-                    <label for="ingredientes">Ingredientes</label>
+                    <label for="ingredientes"><strong>Ingredientes</strong></label>
                     <input id="ingredientes" type="hidden" name="ingredientes" value="{{ old('ingredientes') }}">
 
                     <trix-editor class="form-control @error('ingredientes') is-invalid @enderror"  input="ingredientes"></trix-editor>
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="form-group mt-3 ">
-                    <label for="imagen">Seleccione una imagen</label>
+                    <label for="imagen"><strong>Seleccione una imagen</strong></label>
                     <input id="imagen" name="imagen" type="file" class="form-control @error('imagen') is-invalid @enderror">
 
                     @error('imagen')
